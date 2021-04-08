@@ -1,4 +1,4 @@
-mport urllib.request as request
+import urllib.request as request
 import time, sys
 
 class data:
