@@ -1,4 +1,4 @@
-import urllib.request as request
+mport urllib.request as request
 import time, sys
 
 class data:
@@ -33,10 +33,11 @@ class data:
         else: print(f'The longest combination is:  {max(combs, key=len)}')
 
 # url = "https://gist.githubusercontent.com/bobbae/4ca309a1857158d5766d4ede4235cae0/raw/77d5e62835c80d30b87ab7f4a84a63a4a64f7cb2/words.txt"
+url = None
 try: url = sys.argv[1]
-except: raise('The url Location of the file is needed \n How to run: \"python3 src/count.py <the url>\" \n See ReadMe for more information')
-
-t1 = time.perf_counter()
-data(url).get_longest()
-t2 = time.perf_counter()
-print(f'Time elapsed is {t2-t1}')
+except: print('The url Location of the file is needed \n How to run: \"python3 src/count.py <the url>\" \n See ReadMe for more information')
+if url:
+    t1 = time.perf_counter()
+    data(url).get_longest()
+    t2 = time.perf_counter()
+    print(f'Time elapsed is {t2-t1}')
